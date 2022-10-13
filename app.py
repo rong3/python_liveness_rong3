@@ -116,22 +116,23 @@ class VideoProcessor:
                 print(f'[INFO] {name}, {label_name}')
 
                 width_availabel = 450
+                formula_check = (w/2)-120 <= startX <= (w/2)-50
 
-                if label_name == 'fake' and endX - startX < width_availabel and 250 <= startX <= 420 and 450 <= endX <= 560:
+                if label_name == 'fake' and endX - startX < width_availabel and formula_check:
                     cv2.putText(frm, "Fake Alert!", (startX, endY + 25),
                                 cv2.FONT_HERSHEY_COMPLEX, 0.7, (0, 0, 255), 2)
 
-                if endX - startX < width_availabel and 250 <= startX <= 420 and 450 <= endX <= 560:
+                if endX - startX < width_availabel and formula_check:
                     cv2.putText(frm, name, (startX, startY - 35),
                                 cv2.FONT_HERSHEY_COMPLEX, 0.7, (0, 130, 255), 2)
-                if endX - startX < width_availabel and 250 <= startX <= 420 and 450 <= endX <= 560:
+                if endX - startX < width_availabel and formula_check:
                     cv2.putText(frm, label, (startX, startY - 10),
                                 cv2.FONT_HERSHEY_COMPLEX, 0.7, (0, 0, 255), 2)
-                if endX - startX < width_availabel and 250 <= startX <= 420 and 450 <= endX <= 560:
+                if endX - startX < width_availabel and formula_check:
                     cv2.rectangle(frm, (startX, startY),
                                   (endX, endY), (0, 0, 255), 4)
 
-                print(f'[startX] {startX}, {endX}')
+                print(f'[startX] {startX}, {w/2}')
 
         return av.VideoFrame.from_ndarray(frm, format='bgr24')
 
