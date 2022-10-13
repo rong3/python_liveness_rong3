@@ -115,7 +115,7 @@ class VideoProcessor:
                 label = f'{label_name}: {preds[j]:.4f}'
                 print(f'[INFO] {name}, {label_name}')
 
-                width_availabel = 400
+                width_availabel = 450
 
                 if label_name == 'fake' and endX - startX < width_availabel and 250 <= startX <= 420 and 450 <= endX <= 560:
                     cv2.putText(frm, "Fake Alert!", (startX, endY + 25),
