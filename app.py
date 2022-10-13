@@ -151,7 +151,7 @@ components.html(
         <div class="card-header" id="headingOne">
           <h5 class="mb-0">
             <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Đưa khuôn mặt vào giữa video với khoảng cách phù hợp
+            Đưa khuôn mặt vào giữa video
             </button>
           </h5>
         </div>
